@@ -13,7 +13,7 @@
 <style>
   :root {
     --bg-white:#FFFFFF; --bg-gray-50:#F4F1EA; --bg-gray-100:#EDEAE0;
-    --text-primary:#1C1B19; --text-secondary:#5A5952; --text-tertiary:#86847B;
+    --text-primary:#1C1B19; --text-secondary:#5A5952; --text-tertiary:#69685F;
     --border-default:#DED9CC;
     --blue-primary:#54603A; --blue-dark:#3E5A3A; --blue-strong:#324D2F;
     --teal:#54603A; --teal-bg:#EDEFE3; --amber-bg:#F6EFD9; --amber-tx:#7A5E12;
@@ -27,6 +27,7 @@
     font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     background:var(--bg-gray-50); color:var(--text-primary); line-height:1.6;
     -webkit-font-smoothing:antialiased;
+    -webkit-text-size-adjust:100%; text-size-adjust:100%;
     padding-bottom:calc(72px + env(safe-area-inset-bottom));
   }
   .container { max-width:480px; margin:0 auto; padding:0 18px; }
@@ -36,7 +37,7 @@
     backdrop-filter:blur(8px); border-bottom:1px solid var(--border-default); }
   .topbar-inner { max-width:480px; margin:0 auto; padding:14px 18px; display:flex; align-items:center; justify-content:space-between; }
   .brand { font-size:18px; font-weight:700; font-family:var(--serif); }
-  .brand small { color:var(--teal); font-weight:700; font-size:11px; display:block; letter-spacing:0.5px; font-family:var(--serif); }
+  .brand small { color:var(--teal); font-weight:700; font-size:11.5px; display:block; letter-spacing:0.5px; font-family:var(--serif); }
   .region-pill { font-size:12px; font-weight:600; color:var(--blue-primary); background:#EDEFE3; padding:5px 10px; border-radius:20px; }
 
   /* 히어로 */
@@ -46,7 +47,7 @@
   .hero-stat { display:flex; gap:10px; margin-top:16px; }
   .stat-card { flex:1; background:var(--bg-white); border:1px solid var(--border-default); border-radius:var(--radius-md); padding:12px; text-align:center; }
   .stat-num { font-size:22px; font-weight:700; color:var(--blue-primary); }
-  .stat-label { font-size:11px; color:var(--text-tertiary); margin-top:2px; }
+  .stat-label { font-size:11.5px; color:var(--text-tertiary); margin-top:2px; }
 
   /* 검색 */
   .search-wrap { margin:16px 0 8px; }
@@ -64,10 +65,10 @@
   .aca-sub { font-size:12.5px; color:var(--text-tertiary); margin-top:3px; }
   .aca-score { text-align:center; flex-shrink:0; }
   .aca-score .v { font-size:20px; font-weight:700; color:var(--blue-primary); line-height:1; }
-  .aca-score .c { font-size:11px; color:var(--text-tertiary); margin-top:3px; }
+  .aca-score .c { font-size:11.5px; color:var(--text-tertiary); margin-top:3px; }
   .tag-row { display:flex; gap:6px; flex-wrap:wrap; margin-top:12px; }
   .tag { font-size:12px; padding:4px 9px; background:var(--bg-gray-100); color:var(--text-secondary); border-radius:6px; }
-  .verified { font-size:11px; color:var(--teal); font-weight:600; background:var(--teal-bg); padding:4px 8px; border-radius:6px; }
+  .verified { font-size:11.5px; color:var(--teal); font-weight:600; background:var(--teal-bg); padding:4px 8px; border-radius:6px; }
 
   /* 잠금(Give to Get) */
   .locked-row { margin-top:12px; padding:12px; background:var(--bg-gray-50); border:1px dashed var(--border-default); border-radius:var(--radius-md); text-align:center; }
@@ -95,14 +96,14 @@
   .metric .ml { font-size:14px; color:var(--text-secondary); }
   .metric .mv { font-size:15px; font-weight:700; }
   .review-item { background:var(--bg-gray-50); border-radius:var(--radius-md); padding:13px; margin-top:10px; font-size:13.5px; color:var(--text-secondary); line-height:1.6; }
-  .review-item .meta { font-size:11px; color:var(--text-tertiary); margin-top:6px; }
+  .review-item .meta { font-size:11.5px; color:var(--text-tertiary); margin-top:6px; }
 
   /* 하단 탭바 */
   .tabbar { position:fixed; bottom:0; left:0; right:0; z-index:60; background:var(--bg-white); border-top:1px solid var(--border-default); display:flex; max-width:480px; margin:0 auto; padding-bottom:env(safe-area-inset-bottom); }
   .tabbtn { flex:1; padding:9px 0 8px; text-align:center; background:none; border:none; cursor:pointer; color:var(--text-tertiary); font-family:inherit; }
   .tabbtn.on { color:var(--blue-primary); }
   .tabbtn .ic { font-size:17px; display:block; line-height:1.2; }
-  .tabbtn .lb { font-size:10px; font-weight:600; margin-top:2px; }
+  .tabbtn .lb { font-size:11.5px; font-weight:600; margin-top:2px; }
 
   .page { display:none; }
   .page.on { display:block; }
@@ -113,7 +114,7 @@
   .btn-line { width:100%; padding:14px; background:var(--bg-white); color:var(--blue-primary); border:1px solid var(--blue-primary); border-radius:var(--radius-md); font-size:15px; font-weight:600; cursor:pointer; }
 
   .empty { text-align:center; color:var(--text-tertiary); font-size:14px; padding:40px 0; }
-  .foot { text-align:center; font-size:11px; color:var(--text-tertiary); padding:24px 0 12px; line-height:1.6; }
+  .foot { text-align:center; font-size:11.5px; color:var(--text-tertiary); padding:24px 0 12px; line-height:1.6; }
 
   /* 후기 작성 도움장치 */
   .pick-group { margin-bottom:14px; }
@@ -267,7 +268,7 @@
   .aca-oneline .qm{ color:var(--blue-primary); font-family:var(--serif); font-size:16px; line-height:1; flex-shrink:0; margin-top:1px; }
   .aca-oneline .ol-tx{ font-family:var(--serif); font-size:13px; font-weight:700; color:var(--blue-dark);
     line-height:1.5; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
-  .ai-pin{ font-size:9.5px; font-weight:700; color:#fff; background:var(--blue-primary);
+  .ai-pin{ font-size:11.5px; font-weight:700; color:#fff; background:var(--blue-primary);
     padding:2px 6px; border-radius:5px; letter-spacing:0.3px; flex-shrink:0; margin-top:1px; }
 
   /* === 홈 진입 블록 (랭킹 등 드릴다운 입구) === */
@@ -309,7 +310,7 @@
     background:var(--card-warm); padding:16px; margin-top:14px; cursor:pointer; transition:border-color .12s; }
   .ad-slot:hover{ border-color:var(--blue-primary); }
   .ad-label{ position:absolute; top:-9px; left:14px; background:var(--bg-gray-100); color:var(--text-tertiary);
-    font-size:10px; font-weight:700; padding:2px 8px; border-radius:6px; letter-spacing:0.4px; }
+    font-size:11.5px; font-weight:700; padding:2px 8px; border-radius:6px; letter-spacing:0.4px; }
   .ad-inner{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
   .ad-left{ display:flex; align-items:center; gap:12px; }
   .ad-emoji{ font-size:24px; }
@@ -334,7 +335,7 @@
   .b2b-hero{ background:var(--olive-deep-bg); border-radius:var(--radius-lg); padding:18px 16px; margin-top:6px; }
   .b2b-hero h1{ font-size:21px; font-family:var(--serif); color:var(--olive-deep); margin:0; }
   .b2b-hero p{ font-size:12.5px; color:var(--text-secondary); margin:6px 0 0; line-height:1.6; }
-  .b2b-hero .b2b-pill{ display:inline-block; margin-top:10px; font-size:11px; font-weight:700;
+  .b2b-hero .b2b-pill{ display:inline-block; margin-top:10px; font-size:11.5px; font-weight:700;
     color:var(--olive-deep); background:#fff; border:1px solid var(--border-default);
     border-radius:20px; padding:4px 11px; }
   .prod{ border:1px solid var(--border-default); border-radius:var(--radius-lg); background:var(--card-warm);
@@ -343,7 +344,7 @@
   .prod-ic{ width:38px; height:38px; border-radius:10px; background:var(--olive-tint); display:flex;
     align-items:center; justify-content:center; font-size:19px; flex-shrink:0; }
   .prod-tt b{ font-size:14.5px; font-family:var(--serif); }
-  .prod-tt .prod-tag{ display:inline-block; font-size:10px; font-weight:700; padding:1px 7px; border-radius:6px;
+  .prod-tt .prod-tag{ display:inline-block; font-size:11.5px; font-weight:700; padding:1px 7px; border-radius:6px;
     margin-left:6px; vertical-align:middle; background:var(--amber-bg); color:var(--amber-tx); }
   .prod-tt .prod-tag.live{ background:var(--olive-deep-bg); color:var(--olive-deep); }
   .prod-desc{ font-size:12.5px; color:var(--text-secondary); line-height:1.6; margin-top:9px; }
@@ -358,7 +359,7 @@
   .ai-demo-out{ margin-top:10px; border:1px dashed var(--border-default); border-radius:10px;
     padding:12px; font-size:13px; line-height:1.6; color:var(--text-primary); background:#fff; display:none; }
   .ai-demo-out.show{ display:block; }
-  .ai-demo-out .ai-tag{ font-size:10px; font-weight:700; color:var(--text-tertiary); display:block; margin-top:8px; }
+  .ai-demo-out .ai-tag{ font-size:11.5px; font-weight:700; color:var(--text-tertiary); display:block; margin-top:8px; }
 
   /* ===== 상위권 게시판 / 입시 항로 (v14) ===== */
   .elite-guard{ border:1px solid var(--border-default); background:var(--amber-bg); border-radius:var(--radius-md);
@@ -368,12 +369,12 @@
     padding:14px; margin-top:12px; }
   .route-head{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
   .route-meta{ font-size:12.5px; font-weight:700; color:var(--olive-deep); font-family:var(--serif); }
-  .route-n{ font-size:11px; color:var(--text-tertiary); }
+  .route-n{ font-size:11.5px; color:var(--text-tertiary); }
   .route-flow{ display:flex; align-items:stretch; gap:0; margin-top:12px; overflow-x:auto; padding-bottom:4px; }
   .route-stop{ flex:0 0 auto; min-width:96px; text-align:center; }
   .route-dot{ width:11px; height:11px; border-radius:50%; background:var(--olive-deep); margin:0 auto 6px; }
   .route-aca{ font-size:12px; font-weight:600; color:var(--text-primary); line-height:1.3; }
-  .route-dur{ font-size:11px; color:var(--text-secondary); margin-top:3px; }
+  .route-dur{ font-size:11.5px; color:var(--text-secondary); margin-top:3px; }
   .route-arrow{ flex:0 0 auto; align-self:flex-start; margin-top:2px; color:var(--text-tertiary); font-size:13px; padding:0 2px; }
   .elite-stat{ border:1px solid var(--border-default); border-radius:var(--radius-lg); background:var(--olive-deep-bg);
     padding:14px; margin-top:14px; }
@@ -413,7 +414,7 @@
   .cta2:active{ transform:scale(0.98); }
   .cta2 .c2-emoji{ font-size:22px; flex-shrink:0; }
   .cta2 .c2-tx b{ font-size:14px; font-family:var(--serif); display:block; }
-  .cta2 .c2-tx span{ font-size:11px; margin-top:1px; display:block; }
+  .cta2 .c2-tx span{ font-size:11.5px; margin-top:1px; display:block; }
   .cta2.view{ background:var(--olive-tint); border:1px solid var(--blue-primary); }
   .cta2.view b{ color:var(--blue-dark); } .cta2.view span{ color:var(--blue-primary); }
   .cta2.write{ background:var(--amber-bg); border:1px solid #E8D9A8; }
@@ -450,9 +451,9 @@
   .bp-avatar{ width:28px; height:28px; border-radius:50%; background:var(--olive-tint); display:flex;
     align-items:center; justify-content:center; font-size:15px; flex-shrink:0; }
   .bp-nick{ font-size:13px; font-weight:700; font-family:var(--serif); }
-  .bp-cat{ font-size:10.5px; font-weight:700; color:var(--blue-primary); background:var(--olive-deep-bg);
+  .bp-cat{ font-size:11.5px; font-weight:700; color:var(--blue-primary); background:var(--olive-deep-bg);
     padding:2px 7px; border-radius:5px; }
-  .bp-time{ font-size:11px; color:var(--text-tertiary); margin-left:auto; }
+  .bp-time{ font-size:11.5px; color:var(--text-tertiary); margin-left:auto; }
   .bp-text{ font-size:14px; color:var(--text-primary); line-height:1.65; white-space:pre-wrap; word-break:break-word; }
   .blind-note{ font-size:11.5px; color:var(--text-tertiary); text-align:center; line-height:1.6; padding:8px 0 4px; }
 
@@ -471,7 +472,7 @@
 
   /* === 학원 기본정보 (공공데이터) === */
   .pubinfo{ background:var(--bg-white); border:1px solid var(--border-default); border-radius:var(--radius-lg); padding:14px 16px; }
-  .pi-src{ font-size:10.5px; font-weight:700; color:var(--blue-primary); background:var(--olive-deep-bg); padding:2px 8px; border-radius:6px; margin-left:6px; vertical-align:middle; }
+  .pi-src{ font-size:11.5px; font-weight:700; color:var(--blue-primary); background:var(--olive-deep-bg); padding:2px 8px; border-radius:6px; margin-left:6px; vertical-align:middle; }
   .pi-row{ display:flex; gap:12px; padding:7px 0; border-bottom:1px solid var(--bg-gray-100); font-size:13.5px; }
   .pi-row:last-of-type{ border-bottom:none; }
   .pi-k{ flex-shrink:0; width:78px; color:var(--text-tertiary); font-weight:700; }
@@ -479,21 +480,58 @@
   .pi-v a{ color:var(--blue-primary); text-decoration:none; font-weight:700; }
   .pi-fee{ margin-top:10px; background:var(--olive-tint); border-radius:var(--radius-md); padding:10px 12px; }
   .pi-fee-h{ font-size:12.5px; font-weight:700; color:var(--blue-dark); margin-bottom:6px; }
-  .pi-fee-h span{ font-weight:400; color:var(--text-tertiary); font-size:11px; }
+  .pi-fee-h span{ font-weight:400; color:var(--text-tertiary); font-size:11.5px; }
   .fee-row{ display:flex; justify-content:space-between; font-size:13px; padding:4px 0; }
   .fee-row span:last-child{ font-weight:700; color:var(--blue-dark); }
   .pi-note{ margin-top:12px; font-size:11.5px; color:var(--text-tertiary); line-height:1.6; background:var(--bg-gray-100); border-radius:8px; padding:9px 11px; }
   .pi-note b{ color:var(--text-secondary); }
-  .pi-flag{ font-size:10px; font-weight:700; color:var(--text-tertiary); background:var(--bg-gray-100); padding:1px 6px; border-radius:5px; margin-left:4px; }
+  .pi-flag{ font-size:11.5px; font-weight:700; color:var(--text-tertiary); background:var(--bg-gray-100); padding:1px 6px; border-radius:5px; margin-left:4px; }
   .card-meta{ font-size:11.5px; color:var(--text-tertiary); margin-top:8px; }
   .find-crumb{ font-size:12px; color:var(--text-tertiary); margin:2px 0 8px; }
-  .trust-badge{ display:inline-block; font-size:10.5px; font-weight:700; color:var(--blue-dark);
+  .trust-badge{ display:inline-block; font-size:11.5px; font-weight:700; color:var(--blue-dark);
     background:var(--olive-deep-bg); padding:2px 8px; border-radius:6px; }
   .trust-badge.gold{ color:#92400E; background:#FDF1D6; }
   .filter-bar{ display:flex; gap:7px; flex-wrap:wrap; margin-bottom:10px; }
   .fb-chip{ font-family:inherit; font-size:12px; font-weight:700; color:var(--text-secondary);
     background:var(--bg-white); border:1px solid var(--border-default); border-radius:20px; padding:6px 12px; cursor:pointer; transition:all .12s; }
   .fb-chip.on{ background:var(--blue-primary); border-color:var(--blue-primary); color:#fff; }
+
+  /* === 교차 필터(지역×과목) === */
+  .xf-bar{ background:var(--bg-gray-50, #F6F7F2); border:1px solid var(--border-default); border-radius:14px; padding:10px 11px; margin-bottom:12px; }
+  .xf-row{ display:flex; align-items:center; gap:7px; flex-wrap:wrap; }
+  .xf-row + .xf-row{ margin-top:8px; padding-top:8px; border-top:1px dashed var(--border-default); }
+  .xf-axis{ font-size:11.5px; font-weight:800; color:var(--text-tertiary); min-width:42px; letter-spacing:.2px; }
+  .xf-chip{ font-family:inherit; font-size:12px; font-weight:700; color:var(--text-secondary);
+    background:var(--bg-white); border:1px solid var(--border-default); border-radius:18px; padding:6px 11px; cursor:pointer; transition:all .12s; white-space:nowrap; }
+  .xf-chip:hover{ border-color:var(--blue-primary); }
+  .xf-chip.on{ background:var(--blue-primary); border-color:var(--blue-primary); color:#fff; }
+  .xf-chip .xc-n{ opacity:.85; font-weight:600; margin-left:3px; }
+  .xf-chip.more{ background:transparent; border-style:dashed; color:var(--blue-primary); }
+  .xf-active-note{ font-size:11.5px; color:var(--blue-primary); font-weight:700; margin:2px 0 10px; }
+
+  /* 옵션 시트(전체 보기) — 학원 상세 시트와 별개 */
+  .xfs-mask{ position:fixed; inset:0; background:rgba(0,0,0,0.4); z-index:110; display:none; }
+  .xfs-mask.show{ display:block; }
+  .xfs{ position:fixed; left:0; right:0; bottom:0; z-index:111; background:var(--bg-white); border-radius:20px 20px 0 0;
+    max-width:480px; margin:0 auto; max-height:80vh; overflow-y:auto; transform:translateY(100%); transition:transform .25s ease;
+    padding:8px 18px calc(24px + env(safe-area-inset-bottom)); }
+  .xfs.show{ transform:translateY(0); }
+  .xfs .sheet-handle{ width:40px; height:4px; background:var(--border-default); border-radius:2px; margin:10px auto 14px; }
+  .xfs h3{ font-size:18px; font-weight:800; margin-bottom:4px; }
+  .xfs .xfs-sub{ font-size:12.5px; color:var(--text-tertiary); margin-bottom:12px; }
+  .xfs-opt{ display:flex; justify-content:space-between; align-items:center; padding:13px 6px; border-bottom:1px solid var(--border-default); cursor:pointer; }
+  .xfs-opt:active{ background:var(--bg-gray-50,#F6F7F2); }
+  .xfs-opt .xo-n{ font-size:14px; font-weight:700; }
+  .xfs-opt .xo-c{ font-size:12px; font-weight:700; color:var(--blue-primary); }
+  .xfs-opt.on .xo-n{ color:var(--blue-primary); }
+
+  /* 후기 쓰기 — 찾기 방식 토글 / 탐색기 */
+  .find-mode-toggle{ display:flex; gap:8px; margin-bottom:12px; }
+  .fmt-btn{ flex:1; font-family:inherit; font-size:13px; font-weight:700; padding:10px; border-radius:10px;
+    background:var(--bg-white); border:1px solid var(--border-default); color:var(--text-secondary); cursor:pointer; }
+  .fmt-btn.on{ background:var(--blue-primary); border-color:var(--blue-primary); color:#fff; }
+  .explorer-list{ margin-top:10px; }
+  .explorer-empty{ font-size:13px; color:var(--text-tertiary); text-align:center; padding:18px 0; }
 
 
   /* ===== 안전 공유용 베타 배너 / 정책 링크 / 데모 표시 ===== */
@@ -502,7 +540,7 @@
   .beta-banner b{ color:#7C2D12; }
   .beta-banner .bb-links{ margin-top:4px; display:flex; gap:8px; flex-wrap:wrap; }
   .text-link{ border:none; background:none; color:var(--blue-primary); font:inherit; font-weight:700; cursor:pointer; padding:0; text-decoration:underline; text-underline-offset:2px; }
-  .demo-badge{ display:inline-block; font-size:10.5px; font-weight:700; color:#92400E; background:#FEF3C7; border:1px solid #F3D7A0; border-radius:6px; padding:2px 7px; margin-left:6px; vertical-align:middle; }
+  .demo-badge{ display:inline-block; font-size:11.5px; font-weight:700; color:#92400E; background:#FEF3C7; border:1px solid #F3D7A0; border-radius:6px; padding:2px 7px; margin-left:6px; vertical-align:middle; }
   .safe-note{ background:#F8FAFC; border:1px solid var(--border-default); border-radius:var(--radius-md); padding:12px 14px; margin-top:12px; font-size:12.5px; color:var(--text-secondary); line-height:1.65; }
   .policy-card{ background:var(--bg-white); border:1px solid var(--border-default); border-radius:var(--radius-lg); padding:16px; margin:10px 0; box-shadow:var(--shadow-card); }
   .policy-card h2{ font-size:16px; margin-bottom:8px; font-family:var(--serif); }
@@ -564,7 +602,7 @@
   .aca-sub,.card-meta{ font-size:14px !important; }
   .tag,.verified,.trust-badge,.demo-badge,.pi-src,.pi-flag{ font-size:12.5px !important; padding:4px 8px; }
   .aca-oneline .ol-tx{ font-size:15.5px !important; line-height:1.5; }
-  .ai-pin{ font-size:11px !important; }
+  .ai-pin{ font-size:11.5px !important; }
   .btn-primary,.btn-line,.mailbtn,.ai-demo-btn,.naver-btn,.kakao-btn{ font-size:17px !important; min-height:50px; padding:14px 16px; }
   .sec-head h2,.policy-card h2{ font-size:19px !important; }
   .pick-label,.verify-title{ font-size:16px !important; color:var(--text-primary); }
@@ -862,12 +900,29 @@
     <div id="write-after-role" style="display:none">
       <!-- STEP 1. 학원 검색 -->
       <div class="sec-head" style="margin-top:20px"><h2 style="font-size:16px">② 학원 선택</h2></div>
-      <div class="search-box">
-        <span>🔍</span>
-        <input type="text" id="write-aca-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="다닌 학원 이름을 검색하세요">
+      <div class="find-mode-toggle">
+        <button class="fmt-btn on" id="wfm-name" onclick="setWriteFindMode('name')">🔍 이름으로 검색</button>
+        <button class="fmt-btn" id="wfm-browse" onclick="setWriteFindMode('browse')">📍📚 지역·과목으로 찾기</button>
       </div>
-      <div id="write-aca-result" style="margin-top:8px"></div>
-      <div id="write-aca-notfound" style="display:none"></div>
+      <!-- (A) 이름 검색 -->
+      <div id="write-by-name">
+        <div class="search-box">
+          <span>🔍</span>
+          <input type="text" id="write-aca-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="다닌 학원 이름을 검색하세요">
+        </div>
+        <div id="write-aca-result" style="margin-top:8px"></div>
+        <div id="write-aca-notfound" style="display:none"></div>
+      </div>
+      <!-- (B) 지역·과목 탐색기 (교차 필터) -->
+      <div id="write-by-browse" style="display:none">
+        <div class="xf-bar">
+          <div class="xf-row"><span class="xf-axis">지역</span><span id="wx-region-chips" style="display:contents"></span></div>
+          <div class="xf-row" id="wx-area-wrap" style="display:none"><span class="xf-axis">동</span><span id="wx-area-chips" style="display:contents"></span></div>
+          <div class="xf-row"><span class="xf-axis">과목</span><span id="wx-subject-chips" style="display:contents"></span></div>
+        </div>
+        <div class="find-crumb" id="wx-crumb"></div>
+        <div class="explorer-list" id="wx-list"></div>
+      </div>
       <div id="write-aca-picked" style="display:none"></div>
     </div>
 
@@ -950,11 +1005,11 @@
         <div class="chips-row" data-single="srv-grade">
           <div class="fchip" data-v="초3↓">초3↓</div><div class="fchip" data-v="초4~6">초4~6</div><div class="fchip" data-v="중1">중1</div><div class="fchip" data-v="중2">중2</div><div class="fchip" data-v="중3">중3</div><div class="fchip" data-v="고1">고1</div><div class="fchip" data-v="고2">고2</div><div class="fchip" data-v="고3">고3</div>
         </div></div>
-      <div class="pick-group"><div class="pick-label">성적대 <span style="font-weight:400;color:var(--text-tertiary);font-size:11px">(선택 · 익명 통계용)</span></div>
+      <div class="pick-group"><div class="pick-label">성적대 <span style="font-weight:400;color:var(--text-tertiary);font-size:11.5px">(선택 · 익명 통계용)</span></div>
         <div class="chips-row" data-single="srv-tier">
           <div class="fchip" data-v="상위권">상위권</div><div class="fchip" data-v="중상위">중상위</div><div class="fchip" data-v="중위">중위</div><div class="fchip" data-v="기록안함">기록 안 함</div>
         </div></div>
-      <div class="pick-group"><div class="pick-label">학원 경로 <span style="font-weight:400;color:var(--text-tertiary);font-size:11px">(이전→현재 순서·기간)</span></div>
+      <div class="pick-group"><div class="pick-label">학원 경로 <span style="font-weight:400;color:var(--text-tertiary);font-size:11.5px">(이전→현재 순서·기간)</span></div>
         <textarea id="srv-route" class="write-area" style="min-height:64px" placeholder="예) A수학 1년 → B수학 1년 6개월 → 현재 C학원&#10;※ 실제 다닌 학원만, 실명·학교·반은 쓰지 마세요"></textarea>
       </div>
 
@@ -1302,6 +1357,15 @@
   <div id="sheet-body"></div>
 </div>
 
+<!-- 교차 필터 옵션 시트(전체 보기) -->
+<div class="xfs-mask" id="xfs-mask" onclick="closeXfSheet()"></div>
+<div class="xfs" id="xfs">
+  <div class="sheet-handle"></div>
+  <h3 id="xfs-title"></h3>
+  <div class="xfs-sub" id="xfs-sub"></div>
+  <div id="xfs-body"></div>
+</div>
+
 <!-- ===== 하단 탭 ===== -->
 <div class="tabbar">
   <button class="tabbtn on" data-tab="home" type="button" aria-label="둘러보기"><span class="ic">🏠</span><span class="lb">둘러보기</span></button>
@@ -1493,6 +1557,64 @@ function applyFilters(data){
   if(listFilters.est10)   d=d.filter(a=>operYears(a)>=10);
   if(listFilters.sort==='oldest') d.sort((a,b)=>{const ea=(PUBLIC_INFO[a.id]||{}).est||9999, eb=(PUBLIC_INFO[b.id]||{}).est||9999; return (+ea)-(+eb);});
   return d;
+}
+
+/* =========================================================
+   교차 필터(지역 × 과목) 공용 엔진
+   - 한 축으로 들어간 목록에서 반대 축으로 다시 좁히기(종+횡)
+   - 칩(상위 옵션) + '전체 ▾' 옵션 시트
+   ========================================================= */
+const XF_CHIP_MAX=6;                 // 칩으로 노출할 상위 옵션 수
+const subjectOf=a=>a.subject||a.category||'기타';
+
+/* 지역 경로(동 안)에서 추가 적용하는 과목 좁히기 */
+let xfSub='';
+/* 과목 경로(과목 안)에서 추가 적용하는 지역 좁히기 */
+let xfCity='', xfArea='';
+
+function countBy(list, keyFn){
+  const m={}; list.forEach(a=>{ const k=keyFn(a); if(k) m[k]=(m[k]||0)+1; });
+  return Object.entries(m).sort((a,b)=>b[1]-a[1]);
+}
+
+/* 옵션 시트 열기: opts=[[label,count,value]], active=현재값, onPick(value) */
+function openXfSheet(title, sub, opts, active, onPick){
+  document.getElementById('xfs-title').textContent=title;
+  document.getElementById('xfs-sub').textContent=sub||'';
+  const body=document.getElementById('xfs-body'); body.innerHTML='';
+  const all=el(`<div class="xfs-opt ${active===''?'on':''}"><span class="xo-n">전체</span><span class="xo-c">${opts.reduce((s,o)=>s+o[1],0)}</span></div>`);
+  all.addEventListener('click',()=>{ onPick(''); closeXfSheet(); }); body.appendChild(all);
+  opts.forEach(([label,count,value])=>{
+    const row=el(`<div class="xfs-opt ${active===value?'on':''}"><span class="xo-n">${esc(label)}</span><span class="xo-c">${count}</span></div>`);
+    row.addEventListener('click',()=>{ onPick(value); closeXfSheet(); }); body.appendChild(row);
+  });
+  document.getElementById('xfs').classList.add('show');
+  document.getElementById('xfs-mask').classList.add('show');
+}
+function closeXfSheet(){ document.getElementById('xfs').classList.remove('show'); document.getElementById('xfs-mask').classList.remove('show'); }
+
+/* 칩 한 줄 만들기 — 공용
+   axisLabel: '과목'/'지역'/'동' 등, opts 전체 목록, active 현재값,
+   onPick(value): 칩/시트 선택 콜백 */
+function xfChipRow(axisLabel, opts, active, onPick, sheetTitle){
+  const row=el(`<div class="xf-row"><span class="xf-axis">${axisLabel}</span></div>`);
+  const allChip=el(`<button class="xf-chip ${active===''?'on':''}">전체</button>`);
+  allChip.addEventListener('click',()=>onPick('')); row.appendChild(allChip);
+  const top=opts.slice(0,XF_CHIP_MAX);
+  // 현재 선택값이 상위 N에 없으면 칩으로 끌어올려 보이게
+  if(active && !top.some(o=>o[2]===active)){
+    const cur=opts.find(o=>o[2]===active); if(cur) top.unshift(cur);
+  }
+  top.slice(0,XF_CHIP_MAX).forEach(([label,count,value])=>{
+    const c=el(`<button class="xf-chip ${active===value?'on':''}">${esc(label)}<span class="xc-n">${count}</span></button>`);
+    c.addEventListener('click',()=>onPick(value)); row.appendChild(c);
+  });
+  if(opts.length>XF_CHIP_MAX){
+    const more=el(`<button class="xf-chip more">전체 ${opts.length}개 ▾</button>`);
+    more.addEventListener('click',()=>openXfSheet(sheetTitle||`${axisLabel} 전체`, '탭하면 그 안에서 다시 좁혀집니다', opts, active, onPick));
+    row.appendChild(more);
+  }
+  return row;
 }
 
 function academyCardHTML(a){
@@ -1717,18 +1839,29 @@ function selectCity(city){
 }
 
 function selectDong(dong){
-  homeDong=dong; homeLimit=20;
+  homeDong=dong; homeLimit=20; xfSub='';
   renderLevel3();
   showLevel(3);
 }
 
 function renderLevel3(){
   currentListRenderer=renderLevel3;
-  let data=getAcademies().filter(a=>a.city===homeCity&&a.area===homeDong);
+  // 동 안의 전체(과목 좁히기 전) — 과목 칩 옵션 산출용
+  const inDong=getAcademies().filter(a=>a.city===homeCity&&a.area===homeDong);
+  let data=inDong.slice();
+  if(xfSub) data=data.filter(a=>subjectOf(a)===xfSub);   // ← 과목으로 교차
   data.sort((a,b)=>(b.reviewCount-a.reviewCount)||(b.score-a.score)||a.name.localeCompare(b.name));
   data=applyFilters(data);
-  document.getElementById('level3-label').textContent=`${homeCity} ${homeDong} · ${data.length}곳`;
+  const sline = xfSub ? `${homeCity} ${homeDong} · ${xfSub} · ${data.length}곳` : `${homeCity} ${homeDong} · ${data.length}곳`;
+  document.getElementById('level3-label').textContent=sline;
   const box=document.getElementById('home-list'); box.innerHTML='';
+  // 교차 필터: 과목으로 좁히기
+  const subjOpts=countBy(inDong, subjectOf).map(([s,n])=>[s,n,s]);
+  if(subjOpts.length>1){
+    const bar=el(`<div class="xf-bar"></div>`);
+    bar.appendChild(xfChipRow('과목', subjOpts, xfSub, v=>{ xfSub=v; homeLimit=20; renderLevel3(); }, `${homeDong} · 과목 전체`));
+    box.appendChild(bar);
+  }
   box.appendChild(el(filterBarHTML()));
   data.slice(0,homeLimit).forEach(a=>{
     const c=el(academyCardHTML(a)); c.addEventListener('click',()=>openSheet(a.id)); box.appendChild(c);
@@ -1999,6 +2132,79 @@ function resetWriteAca(){
   document.getElementById('write-step2').style.display='none';
 }
 document.getElementById('write-aca-input').addEventListener('input',e=>renderWriteSearch(e.target.value.trim()));
+
+/* ===== 후기 쓰기: 이름검색 / 지역·과목 탐색 토글 ===== */
+let writeFindMode='name';
+let wxCity='', wxArea='', wxSub='';
+function setWriteFindMode(m){
+  writeFindMode=m;
+  document.getElementById('wfm-name').classList.toggle('on',m==='name');
+  document.getElementById('wfm-browse').classList.toggle('on',m==='browse');
+  document.getElementById('write-by-name').style.display = m==='name'?'block':'none';
+  document.getElementById('write-by-browse').style.display = m==='browse'?'block':'none';
+  if(m==='browse') renderWriteExplorer();
+}
+function renderWriteExplorer(){
+  const all=getAcademies();
+  // 현재까지 적용된 다른 축 기준으로 옵션 수 계산(교차)
+  const bySubj = a => (!wxSub || subjectOf(a)===wxSub);
+  const byCity = a => (!wxCity || a.city===wxCity);
+  const byArea = a => (!wxArea || a.area===wxArea);
+
+  // 지역(시) 칩 — 과목 선택을 반영
+  const cityPool=all.filter(bySubj);
+  const cityOpts=countBy(cityPool, a=>a.city).map(([c,n])=>[c+'시',n,c]);
+  fillChips('wx-region-chips', cityOpts, wxCity, '시 전체', v=>{ wxCity=v; wxArea=''; renderWriteExplorer(); });
+
+  // 동 칩 — 시 선택 시에만
+  const areaWrap=document.getElementById('wx-area-wrap');
+  if(wxCity){
+    areaWrap.style.display='flex';
+    const areaPool=all.filter(a=>a.city===wxCity).filter(bySubj);
+    const areaOpts=countBy(areaPool, a=>a.area).map(([d,n])=>[d,n,d]);
+    fillChips('wx-area-chips', areaOpts, wxArea, `${wxCity}시 · 동 전체`, v=>{ wxArea=v; renderWriteExplorer(); });
+  } else { areaWrap.style.display='none'; wxArea=''; }
+
+  // 과목 칩 — 지역 선택을 반영
+  const subjPool=all.filter(byCity).filter(byArea);
+  const subjOpts=countBy(subjPool, subjectOf).map(([s,n])=>[s,n,s]);
+  fillChips('wx-subject-chips', subjOpts, wxSub, '과목 전체', v=>{ wxSub=v; renderWriteExplorer(); });
+
+  // 결과 목록
+  let data=all.filter(byCity).filter(byArea).filter(bySubj);
+  data.sort((a,b)=>(b.reviewCount-a.reviewCount)||(b.score-a.score)||a.name.localeCompare(b.name));
+  const crumb=[wxCity&&wxCity+'시', wxArea, wxSub].filter(Boolean).join(' · ');
+  document.getElementById('wx-crumb').textContent = (crumb?crumb+' · ':'') + `${data.length}곳`;
+  const box=document.getElementById('wx-list'); box.innerHTML='';
+  if(!wxCity && !wxSub){
+    box.appendChild(el(`<div class="explorer-empty">지역이나 과목을 선택하면 학원이 좁혀집니다.</div>`));
+    return;
+  }
+  data.slice(0,40).forEach(a=>{
+    const sub=[a.subject||a.category, a.area].filter(Boolean).join('·');
+    const opt=el(`<div class="write-aca-opt"><span class="wn">${esc(a.name)}</span><span class="ws">${esc(sub)}</span></div>`);
+    opt.addEventListener('click',()=>pickWriteAca(a.id,'')); box.appendChild(opt);
+  });
+  if(!data.length) box.appendChild(el(`<div class="explorer-empty">조건에 맞는 학원이 없어요. 필터를 줄여보세요.</div>`));
+  if(data.length>40) box.appendChild(el(`<div class="explorer-empty">상위 40곳 표시 · 동·과목으로 더 좁혀보세요</div>`));
+}
+/* 칩 컨테이너에 칩 채우기 (전체 + 상위 N + 전체 ▾ 시트) */
+function fillChips(containerId, opts, active, sheetTitle, onPick){
+  const box=document.getElementById(containerId); box.innerHTML='';
+  const allChip=el(`<button class="xf-chip ${active===''?'on':''}">전체</button>`);
+  allChip.addEventListener('click',()=>onPick('')); box.appendChild(allChip);
+  const top=opts.slice(0,XF_CHIP_MAX);
+  if(active && !top.some(o=>o[2]===active)){ const cur=opts.find(o=>o[2]===active); if(cur) top.unshift(cur); }
+  top.slice(0,XF_CHIP_MAX).forEach(([label,count,value])=>{
+    const c=el(`<button class="xf-chip ${active===value?'on':''}">${esc(label)}<span class="xc-n">${count}</span></button>`);
+    c.addEventListener('click',()=>onPick(value)); box.appendChild(c);
+  });
+  if(opts.length>XF_CHIP_MAX){
+    const more=el(`<button class="xf-chip more">전체 ${opts.length}개 ▾</button>`);
+    more.addEventListener('click',()=>openXfSheet(sheetTitle,'탭하면 그 조건으로 좁혀집니다',opts,active,v=>{ onPick(v); }));
+    box.appendChild(more);
+  }
+}
 
 // 별점
 document.querySelectorAll('#star-row .star').forEach(s=>{
@@ -2494,7 +2700,7 @@ function selectBigCat(c){
   window.scrollTo(0,0);
 }
 function selectSubject(s){
-  findSubject=s; findSubjLimit=20;
+  findSubject=s; findSubjLimit=20; xfCity=''; xfArea='';
   document.getElementById('subject-label').textContent=`${findBigCat} · ${s}`;
   renderSubjectList();
   document.getElementById('subject-step2').style.display='none';
@@ -2503,12 +2709,28 @@ function selectSubject(s){
 }
 function renderSubjectList(){
   currentListRenderer=renderSubjectList;
-  let data=getAcademies().filter(a=>bigCategoryOf(a)===findBigCat && (a.subject||a.category)===findSubject);
+  // 과목 안의 전체(지역 좁히기 전) — 지역 칩 옵션 산출용
+  const inSubj=getAcademies().filter(a=>bigCategoryOf(a)===findBigCat && subjectOf(a)===findSubject);
+  let data=inSubj.slice();
+  if(xfCity) data=data.filter(a=>a.city===xfCity);       // ← 시로 교차
+  if(xfArea) data=data.filter(a=>a.area===xfArea);       // ← 동으로 교차
   data.sort((a,b)=>(b.reviewCount-a.reviewCount)||(b.score-a.score)||a.name.localeCompare(b.name));
   data=applyFilters(data);
   const box=document.getElementById('subject-list'); box.innerHTML='';
+  // 교차 필터: 지역으로 좁히기 (시 → 동)
+  const cityOpts=countBy(inSubj, a=>a.city).map(([c,n])=>[c+'시',n,c]);
+  if(cityOpts.length>0){
+    const bar=el(`<div class="xf-bar"></div>`);
+    bar.appendChild(xfChipRow('지역', cityOpts, xfCity, v=>{ xfCity=v; xfArea=''; findSubjLimit=20; renderSubjectList(); }, '시 전체'));
+    if(xfCity){
+      const areaOpts=countBy(inSubj.filter(a=>a.city===xfCity), a=>a.area).map(([d,n])=>[d,n,d]);
+      if(areaOpts.length>1) bar.appendChild(xfChipRow('동', areaOpts, xfArea, v=>{ xfArea=v; findSubjLimit=20; renderSubjectList(); }, `${xfCity}시 · 동 전체`));
+    }
+    box.appendChild(bar);
+  }
   box.appendChild(el(filterBarHTML()));
-  box.appendChild(el(`<div class="find-crumb">${findBigCat} · ${findSubject} · ${data.length}곳</div>`));
+  const regionTxt=[xfCity&&xfCity+'시', xfArea].filter(Boolean).join(' ');
+  box.appendChild(el(`<div class="find-crumb">${findBigCat} · ${findSubject}${regionTxt?' · '+regionTxt:''} · ${data.length}곳</div>`));
   data.slice(0,findSubjLimit).forEach(a=>{ const c=el(academyCardHTML(a)); c.addEventListener('click',()=>openSheet(a.id)); box.appendChild(c); });
   if(!data.length) box.appendChild(el(`<div class="empty">결과 없음 · 필터를 줄여보세요.</div>`));
   if(data.length>findSubjLimit){
